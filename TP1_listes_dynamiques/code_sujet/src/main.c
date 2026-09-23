@@ -6,15 +6,15 @@
 
 int main() {
 
-    // t_list list = create_empty_list();
-    // print_list(&list);
+    t_list list = create_empty_list();
+    print_list(&list);
 
-    // push_back(&list, 5);
-    // push_back(&list, 2);
-    // print_list(&list);
+    push_back(&list, 5);
+    push_back(&list, 2);
+    print_list(&list);
 
-    // delete_at(&list, 2);
-    // print_list(&list);
+    delete_at(&list, 2);
+    print_list(&list);
 
     // insert(&list, 1, 0);
     // print_list(&list);

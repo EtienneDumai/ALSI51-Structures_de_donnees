@@ -8,4 +8,5 @@ include_directories(include/)
 add_executable(TP1
         src/main.c
         src/list_array.c
+        src/list_linked.c
 )

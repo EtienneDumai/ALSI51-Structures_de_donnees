@@ -29,7 +29,7 @@ void set(t_list *list, int index, T val);
 
 // O(1)
 void push_front(t_list *list, T val);
-
+t_cell* get_last(t_list *list);
 // O(1)
 void push_back(t_list *list, T val);
 

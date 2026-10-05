@@ -1,35 +1,40 @@
 #include "structures/stack.h"
 
+#include <stdlib.h>
+
 t_stack create_empty_stack() {
-    // TODO
+    t_stack stack;
+    stack.list = create_empty_list();
+    return stack;
 }
 
 // Returns true if the stack is empty
 bool is_empty_stack(t_stack *stack) {
-    // TODO
+    return length(&stack->list) == 0;
 }
 
 // Pushes the value val to the top of the stack
 void push(t_stack *stack, T val) {
-    // TODO
+    push_front(&stack->list, val);
 }
 
 // Returns the value at the top of the stack
 T get_top(t_stack *stack) {
-    // TODO
+    return get(&stack->list, 0);
 }
 
 // Returns the value at the top of the stack and deletes it from the stack
 T pop(t_stack *stack) {
-    // TODO
+    const T val = get(&stack->list, 0);
+    return val;
 }
 
 // Destroys the stack
 void destroy_stack(t_stack *stack) {
-    // TODO
+    destroy_list(&stack->list);
 }
 
 // Prints the content of the stack
 void print_stack(t_stack *stack) {
-    // TODO
+    print_list(&stack->list);
 }

@@ -1,35 +1,37 @@
 #include "structures/queue.h"
 
 t_queue create_empty_queue() {
-    // TODO
+    create_empty_list();
 }
 
 // Returns true if the queue is empty
 bool is_empty_queue(t_queue *queue) {
-    // TODO
+    return length(&queue->list) == 0;
 }
 
 // Pushes the value val to the back of the queue
 void push_queue(t_queue *queue, T val) {
-    // TODO
+    push_back(&queue->list, val);
 }
 
 // Returns the value at the front of the queue
 T get_front_queue(t_queue *queue) {
-    // TODO
+    return get(&queue->list, queue->list.size-1);
 }
 
 // Returns the value at the front of the queue and deletes it from the queue
 T pop_queue(t_queue *queue) {
-    // TODO
+    const T val = get(&queue->list, queue->list.size-1);
+    delete_at(&queue->list, queue->list.size-1);
+    return val;
 }
 
 // Destroys the queue
 void destroy_queue(t_queue *queue) {
-    // TODO
+    destroy_list(&queue->list);
 }
 
 // Prints the content of the queue
 void print_queue(t_queue *queue) {
-    // TODO
+    print_list(&queue->list);
 }

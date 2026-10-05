@@ -18,7 +18,7 @@ void realloc_list(t_list* list) {
 // Shifts the elements of indices index_start .. size-1 one position to the right
 // It is assumed that capacity >= size + 1
 void shift_right(t_list* list, int index_start) {
-    for (unsigned int i = list->size; i >= index_start; i--)
+    for (unsigned int i = list->size; i > index_start; i--)
     {
         list->data[i] = list->data[i - 1];
     }
@@ -26,7 +26,7 @@ void shift_right(t_list* list, int index_start) {
 
 // Shifts the elements of indices index_start .. size-1 one position to the left
 void shift_left(t_list* list, int index_start) {
-    for (unsigned int i = index_start; i >= list->size; i++)
+    for (unsigned int i = index_start-1; i < list->size-1; i++)
     {
         list->data[i] = list->data[i + 1];
     }
@@ -53,8 +53,7 @@ void set(t_list *list, int index, T val)
 }
 void push_front(t_list *list, T val)
 {
-    shift_right(list, 0);
-    set(list, 0, val);
+    insert(list, 0, val);
 }
 void push_back(t_list *list, T val)
 {
@@ -72,7 +71,7 @@ void insert(t_list *list, int index, T val)
 }
 void delete_at(t_list *list, int index)
 {
-    shift_left(list, index);
+    shift_left(list, index + 1);
     list->size--;
 }
 void print_list(t_list *list)

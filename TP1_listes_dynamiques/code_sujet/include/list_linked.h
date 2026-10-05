@@ -13,6 +13,7 @@ typedef struct {
     int size;
 } t_list;
 
+t_cell* get_cell(t_list* list, int index);
 // Returns an empty list
 t_list create_empty_list();
 
@@ -40,4 +41,5 @@ void print_list(t_list *list);
 // Frees the memory reserved to store the elements
 void destroy_list(t_list *list);
 
+t_cell *createCell(T val);
 #endif
